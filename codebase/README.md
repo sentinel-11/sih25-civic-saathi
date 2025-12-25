@@ -1,4 +1,4 @@
-# Maintain.AI
+# Civic Saathi
 
 An intelligent maintenance management platform leveraging AI to streamline issue tracking, analysis, and resolution across institutional environments.
 
@@ -14,6 +14,7 @@ An intelligent maintenance management platform leveraging AI to streamline issue
 ## Technology Stack
 
 ### Frontend
+
 - **React 18** with TypeScript
 - **Vite** for fast development and building
 - **Tailwind CSS** for styling
@@ -23,6 +24,7 @@ An intelligent maintenance management platform leveraging AI to streamline issue
 - **Firebase Authentication** for user management
 
 ### Backend
+
 - **Node.js** with Express.js
 - **TypeScript** for type safety
 - **PostgreSQL** with Drizzle ORM
@@ -33,7 +35,7 @@ An intelligent maintenance management platform leveraging AI to streamline issue
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - PostgreSQL database
 - Firebase project (for authentication)
 - Google Gemini API key
@@ -58,12 +60,14 @@ DATABASE_URL=your_postgresql_connection_string
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/maintain-ai.git
 cd maintain-ai
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -71,6 +75,7 @@ npm install
 3. Set up your environment variables (see above)
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -114,10 +119,12 @@ For testing purposes, you can use these credentials:
 ## API Endpoints
 
 ### Authentication
+
 - `GET /api/users/firebase/:uid` - Get user by Firebase UID
 - `POST /api/users` - Create new user
 
 ### Issues
+
 - `GET /api/issues` - Get all issues
 - `GET /api/issues/:id` - Get specific issue
 - `POST /api/issues` - Create new issue
@@ -126,11 +133,13 @@ For testing purposes, you can use these credentials:
 - `POST /api/issues/:id/upvote` - Toggle upvote
 
 ### Technicians
+
 - `GET /api/technicians` - Get all technicians
 - `POST /api/technicians` - Create technician
 - `PATCH /api/technicians/:id` - Update technician
 
 ### AI Analysis
+
 - `POST /api/analyze-issue` - Analyze issue with Gemini AI
 
 ## Contributing
