@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 15%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 15%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 96%);
+  --primary: hsl(0, 0%, 15%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 15%);
+  --accent: hsl(0, 0%, 96%);
+  --accent-foreground: hsl(0, 0%, 15%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(0, 0%, 15%);
+  --radius: 0.5rem;
+
+  /* Gray color palette */
+  --gray-50: hsl(0, 0%, 98%);
+  --gray-100: hsl(0, 0%, 96%);
+  --gray-200: hsl(0, 0%, 90%);
+  --gray-300: hsl(0, 0%, 83%);
+  --gray-400: hsl(0, 0%, 64%);
+  --gray-500: hsl(0, 0%, 45%);
+  --gray-600: hsl(0, 0%, 32%);
+  --gray-700: hsl(0, 0%, 25%);
+  --gray-800: hsl(0, 0%, 15%);
+  --gray-900: hsl(0, 0%, 9%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(0, 0%, 15%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Mobile-first optimizations */
+  @media (max-width: 768px) {
+    html, body, #root {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  /* Ensure media scale to container width on small screens */
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Responsive map wrapper (for iframes or map divs) */
+  .map-responsive {
+    position: relative;
+    padding-top: 56.25%;
+  }
+  .map-responsive iframe,
+  .map-responsive > div {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .snap-y {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .snap-y::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .gray-50 {
+    background-color: var(--gray-50);
+  }
+  .gray-100 {
+    background-color: var(--gray-100);
+  }
+  .gray-200 {
+    background-color: var(--gray-200);
+  }
+
+  /* Enhanced button styles */
+  .btn-primary {
+    @apply bg-gray-800 hover:bg-gray-900 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-800 font-medium px-6 py-3 rounded-lg border border-gray-200 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md;
+  }
+
+  /* Card enhancements */
+  .card-enhanced {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.01];
+  }
+  .admin-card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.01];
+  }
+
+  /* Layout containers */
+  .container-centered {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  /* Typography improvements */
+  .heading-primary {
+    @apply text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight;
+  }
+
+  .heading-secondary {
+    @apply text-xl sm:text-2xl font-semibold text-gray-900;
+  }
+
+  .text-muted {
+    @apply text-gray-600;
+  }
+
+  /* Grid improvements */
+  .grid-responsive {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Helpful utilities */
+  .responsive-image {
+    @apply max-w-full h-auto;
+  }
+  .no-horizontal-scroll {
+    overflow-x: hidden;
+  }
+}
