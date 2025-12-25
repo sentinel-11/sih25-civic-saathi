@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Civic Saathi
+=======
+# CivicSaathi
+>>>>>>> 25c433f816e46bb59f30f39e4806538edf40185f
 
 An intelligent maintenance management platform leveraging AI to streamline issue tracking, analysis, and resolution across institutional environments.
 

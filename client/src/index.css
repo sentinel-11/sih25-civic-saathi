@@ -73,8 +73,12 @@
   /* Mobile-first optimizations */
   @media (max-width: 768px) {
     html, body, #root {
+<<<<<<< HEAD
       height: 100%;
       overflow: hidden;
+=======
+      /* Removed height: 100% and overflow: hidden to allow vertical scrolling */
+>>>>>>> 25c433f816e46bb59f30f39e4806538edf40185f
     }
   }
 
